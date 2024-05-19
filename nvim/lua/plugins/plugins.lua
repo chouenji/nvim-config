@@ -1,22 +1,16 @@
 return {
-  -- Configure LazyVim to load any theme added to colorscheme
+  { "rose-pine/neovim", name = "rose-pine" },
+
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "rose-pine",
     },
   },
 
-  -- transparent background
-  { "xiyaowong/transparent.nvim" },
+  { "f-person/git-blame.nvim" },
 
-  -- catppuccin theme
-  { "catppuccin/nvim", name = "catppuccin", lazy = false },
-
-  -- searchbar ui
-  { "VonHeikemen/searchbox.nvim" },
-
-  -- file explorer
+  -- Oil nvim
   {
     "stevearc/oil.nvim",
     opts = {},
@@ -24,18 +18,28 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 
-  -- nvim-surround
   {
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
+    "nmac427/guess-indent.nvim",
     config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
+      require("guess-indent").setup({})
     end,
   },
-
-  -- git-blame
-  { "f-person/git-blame.nvim" },
+  
+  {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+    },
+    keys = {
+      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    },
+  },
 }
