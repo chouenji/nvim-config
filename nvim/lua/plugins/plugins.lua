@@ -9,8 +9,7 @@ return {
   },
 
   { "f-person/git-blame.nvim" },
-
-  -- Oil nvim
+  
   {
     "stevearc/oil.nvim",
     opts = {},
