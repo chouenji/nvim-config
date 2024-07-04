@@ -47,3 +47,8 @@ end)
 vim.keymap.set("n", "5", function()
   harpoon:list():select(5)
 end)
+
+-- Delete Buffers but current
+local bufdel = require("bufdel")
+
+vim.keymap.set("n", "<leader>bo", "<CMD>BufDelOthers<CR>")
