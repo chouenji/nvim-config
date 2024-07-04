@@ -8,6 +8,8 @@ return {
     },
   },
 
+  { "ojroques/nvim-bufdel" },
+
   { "f-person/git-blame.nvim" },
   
   {
